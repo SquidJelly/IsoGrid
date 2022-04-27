@@ -3,8 +3,12 @@ import { IsoTile } from "./isotile";
 import { indexToIso } from "../util/math";
 import { SelectTileEvent } from "../events/event";
 import { COLOR } from "../util/constants";
+import { isPositiveInteger } from "../util/validation";
 
-/** Creates an isometric grid with a variable width and height */
+/** Creates an isometric grid with a variable width and height 
+ *  @param rows - Must be a positive integer
+ *  @param columns - Must be a positive integer
+ *  */
 export class IsoGrid extends Container
 {
     private tiles:Array<IsoTile>;
@@ -15,6 +19,9 @@ export class IsoGrid extends Container
     constructor(readonly rows:number, readonly columns:number)
     {
         super();
+
+        if(!isPositiveInteger(rows) || !isPositiveInteger(columns))
+            console.error("IsoGrid constructor was not passed a positive integer!");
 
         this.tiles = new Array<IsoTile>();
         for(let i = 0; i < this.rows; i++)
