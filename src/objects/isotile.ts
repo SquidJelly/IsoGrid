@@ -90,8 +90,8 @@ function constructIsoPoly():number[]
     let pts:number[] = new Array();
     for (let i = 0; i < BOX.length; i++)
     {
-        const npt:Point = indexToIso(BOX[i]);
-        pts.push(npt.x, npt.y);
+        const pt:Point = indexToIso(BOX[i]);
+        pts.push(pt.x, pt.y);
     }
     return pts;
 }
