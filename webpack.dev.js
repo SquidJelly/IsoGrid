@@ -4,7 +4,7 @@ const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
   devtool: 'inline-source-map',
-  mode: 'none',
+  mode: 'development',
   devServer: {
     static: {
         directory: path.join(__dirname, 'dist'),

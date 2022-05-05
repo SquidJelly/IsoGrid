@@ -1,3 +1,6 @@
+export const CANVAS_WIDTH:number   = 1280;
+export const CANVAS_HEIGHT:number  = 720;
+
 export const TILE_SIZE:number = 50;
 export const TILE_HALF:number = 25;
 
